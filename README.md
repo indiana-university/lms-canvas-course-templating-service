@@ -1,0 +1,1 @@
+# ess-lms-canvas-course-templating-service
