@@ -10,11 +10,11 @@
 
     <artifactId>course-templating-service</artifactId>
     <packaging>jar</packaging>
-    <version>4.0.0</version>
+    <version>4.0.1</version>
 
     <properties>
         <lms-canvas-client.version>4.0.30</lms-canvas-client.version>
-        <lms-iuonly-client.version>4.0.12</lms-iuonly-client.version>
+        <lms-iuonly-client.version>4.0.13</lms-iuonly-client.version>
     </properties>
 
     <dependencies>
