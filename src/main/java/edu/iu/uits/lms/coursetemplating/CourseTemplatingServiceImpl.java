@@ -39,7 +39,8 @@ public class CourseTemplatingServiceImpl implements CourseTemplatingService {
       if (templatedCourse == null || ContentMigrationHelper.STATUS.ERROR.name().equals(templatedCourse.getStatus()) || forceApply) {
          log.info("Applying template to course " + courseId + " (" + sisCourseId + ")");
          ContentMigration cm = contentMigrationApi.importCCIntoCourse(courseId, null, templateUrl);
-         ContentMigrationStatus cms = new ContentMigrationStatus().contentMigrationId(cm.getId()).status(cm.getWorkflowState());
+         ContentMigrationStatus cms = new ContentMigrationStatus().contentMigrationId(cm.getId())
+               .status(ContentMigrationHelper.translateStatus(cm.getWorkflowState()).name());
 
          if (templatedCourse == null) {
             templatedCourse = new TemplatedCourse().courseId(courseId).sisCourseId(sisCourseId).termId(termId).status(ContentMigrationHelper.STATUS.PENDING.name());
